@@ -17,9 +17,6 @@
     "electron-store": "^10.0.0",
     "socket.io-client": "^4.8.0"
   },
-  "optionalDependencies": {
-    "@nut-tree/nut-js": "^4.2.0"
-  },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "electron": "^33.0.0",
