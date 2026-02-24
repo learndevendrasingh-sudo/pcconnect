@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ipconfig:*)",
+      "Bash(docker-compose:*)",
+      "Bash(pnpm --filter web build:*)",
+      "Bash(pnpm --filter signaling type-check:*)",
+      "Bash(pnpm --filter input-proxy type-check:*)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+  <title>SecureDesk Agent</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- Title Bar -->
+  <div class="titlebar" id="titlebar">
+    <div class="titlebar-left">
+      <span class="titlebar-icon">🛡️</span>
+      <span class="titlebar-title">SecureDesk Agent</span>
+    </div>
+    <div class="titlebar-buttons">
+      <button class="titlebar-btn" id="btn-minimize">─</button>
+      <button class="titlebar-btn titlebar-close" id="btn-close">✕</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Status -->
+    <div class="status-section">
+      <div class="status-indicator" id="status-indicator">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status-text">Connecting...</span>
+      </div>
+    </div>
+
+    <!-- Connection Info -->
+    <div class="card">
+      <div class="card-header">Your Connection ID</div>
+      <div class="connection-id" id="connection-id">---</div>
+      <button class="btn btn-secondary btn-sm" id="btn-copy-id">Copy ID</button>
+    </div>
+
+    <div class="card">
+      <div class="card-header">Password</div>
+      <div class="password-display">
+        <span id="password-text">••••••••</span>
+        <button class="btn-icon" id="btn-toggle-password" title="Show/Hide">👁️</button>
+      </div>
+      <button class="btn btn-secondary btn-sm" id="btn-new-password">Generate New Password</button>
+    </div>
+
+    <!-- Session Info (shown during active session) -->
+    <div class="card session-card hidden" id="session-card">
+      <div class="card-header">Active Session</div>
+      <div class="session-info">
+        <span id="session-viewer">Connected viewer</span>
+        <span class="session-timer" id="session-timer">00:00:00</span>
+      </div>
+      <button class="btn btn-danger btn-sm" id="btn-end-session">End Session</button>
+    </div>
+
+    <!-- System Info -->
+    <div class="system-info">
+      <span id="sys-hostname">---</span>
+      <span id="sys-version">v1.0.0</span>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

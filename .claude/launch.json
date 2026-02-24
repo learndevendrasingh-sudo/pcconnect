@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["../../node_modules/next/dist/bin/next", "dev"],
+      "port": 3000,
+      "cwd": "apps/web"
+    },
+    {
+      "name": "signaling",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["../../node_modules/tsx/dist/cli.mjs", "src/index.ts"],
+      "port": 3001,
+      "cwd": "server/signaling"
+    },
+    {
+      "name": "input-proxy",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--env-file=.env", "../../node_modules/tsx/dist/cli.mjs", "src/index.ts"],
+      "port": 3002,
+      "cwd": "server/input-proxy"
+    }
+  ]
+}
