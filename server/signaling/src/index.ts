@@ -65,7 +65,7 @@ const rateLimiter = new RateLimiter();
 // Setup handlers
 setupSocketHandlers(io, roomManager, rateLimiter);
 
-const PORT = CONFIG.SIGNALING_PORT;
+const PORT = parseInt(process.env.PORT || String(CONFIG.SIGNALING_PORT), 10);
 
 httpServer.listen(PORT, '0.0.0.0', () => {
   const protocol = useTLS ? 'wss' : 'ws';

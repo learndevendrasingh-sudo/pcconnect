@@ -29,7 +29,7 @@ export const CONFIG = {
     { urls: 'stun:stun3.l.google.com:19302' },
     { urls: 'stun:stun4.l.google.com:19302' },
     { urls: 'stun:global.stun.twilio.com:3478' },
-  ] as RTCIceServer[],
+  ] as { urls: string }[],
 
   // File transfer
   FILE_CHUNK_SIZE: 16 * 1024, // 16KB
