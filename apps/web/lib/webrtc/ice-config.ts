@@ -15,23 +15,31 @@ export function getIceServers(): RTCIceServer[] {
       credential: turnPass,
     });
   } else {
-    // Free Metered TURN relay for development — provides relay candidates
+    // Metered.ca TURN relay — provides relay candidates
     // when direct P2P fails (mDNS not resolving, firewall blocking, etc.)
     servers.push(
       {
-        urls: 'turn:openrelay.metered.ca:80',
-        username: 'openrelayproject',
-        credential: 'openrelayproject',
+        urls: 'stun:stun.relay.metered.ca:80',
       },
       {
-        urls: 'turn:openrelay.metered.ca:443',
-        username: 'openrelayproject',
-        credential: 'openrelayproject',
+        urls: 'turn:global.relay.metered.ca:80',
+        username: '766f5f08454926398ea7fd52',
+        credential: 'BRvrhbjwriHcY4lZ',
       },
       {
-        urls: 'turn:openrelay.metered.ca:443?transport=tcp',
-        username: 'openrelayproject',
-        credential: 'openrelayproject',
+        urls: 'turn:global.relay.metered.ca:80?transport=tcp',
+        username: '766f5f08454926398ea7fd52',
+        credential: 'BRvrhbjwriHcY4lZ',
+      },
+      {
+        urls: 'turn:global.relay.metered.ca:443',
+        username: '766f5f08454926398ea7fd52',
+        credential: 'BRvrhbjwriHcY4lZ',
+      },
+      {
+        urls: 'turns:global.relay.metered.ca:443?transport=tcp',
+        username: '766f5f08454926398ea7fd52',
+        credential: 'BRvrhbjwriHcY4lZ',
       },
     );
   }
