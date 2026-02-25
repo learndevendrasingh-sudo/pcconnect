@@ -23,7 +23,7 @@ import type {
 } from '@securedesk/shared';
 
 const INPUT_PROXY_URL = 'ws://127.0.0.1:3002';
-const INPUT_PROXY_TOKEN = process.env.NEXT_PUBLIC_INPUT_PROXY_TOKEN || '';
+const INPUT_PROXY_TOKEN = process.env.NEXT_PUBLIC_INPUT_PROXY_TOKEN || 'securedesk-dev-token-2024';
 const PING_INTERVAL_MS = 2000;
 
 export default function SessionPage() {
