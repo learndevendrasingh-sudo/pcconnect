@@ -1,4 +1,4 @@
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -19,22 +19,9 @@ COPY packages/shared/ ./packages/shared/
 COPY server/signaling/ ./server/signaling/
 COPY tsconfig.base.json ./
 
-# Build
-RUN pnpm --filter signaling build
-
-# Production stage
-FROM node:20-alpine
-
-WORKDIR /app
-
-COPY --from=builder /app/server/signaling/dist ./dist
-COPY --from=builder /app/server/signaling/package.json ./
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/packages/shared/dist ./node_modules/@securedesk/shared/dist
-
 EXPOSE 3001
 
 ENV NODE_ENV=production
 ENV PORT=3001
 
-CMD ["node", "dist/index.js"]
+CMD ["node_modules/.bin/tsx", "server/signaling/src/index.ts"]
